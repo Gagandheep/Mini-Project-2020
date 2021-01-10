@@ -1,0 +1,274 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Initial block of instruction memory with memory : 0000010000000000
+
+Initial block of ALU
+Initial block of Datapath_Unit
+Initial block of Control_Unit
+Initial block of Risc_16_bit
+pc = 0000000000000000
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0000010000000000
+Rs1 = 010
+Rs2 = 000
+Opcode = 0000
+Begin always block with opcode : 0000
+Opcode : 0000 - Load 
+Load or Store task inside ALU
+aluMode : 0
+Rd1 = 0000000000000000
+Offset = 000000
+Result = 0000000000000000
+Load or Store task inside Data_Memory
+Load task inside Data Memory
+Result = 0000000000000000
+Load complete. Rdata = 0000000000000001
+Write back to R0.
+Write back done.
+	R[0] =     1	R[1] =     0	R[2] =     0	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000001
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0000010001000001
+Rs1 = 010
+Rs2 = 001
+Opcode = 0000
+Begin always block with opcode : 0000
+Opcode : 0000 - Load 
+Load or Store task inside ALU
+aluMode : 0
+Rd1 = 0000000000000000
+Offset = 000001
+Result = 0000000000000001
+Load or Store task inside Data_Memory
+Load task inside Data Memory
+Result = 0000000000000001
+Load complete. Rdata = 0000000000000010
+Write back to R1.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     0	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000010
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0010000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0010
+Begin always block with opcode : 0010
+Opcode : 0002 - ALU Add 
+Add task inside ALU
+aluMode : 1
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Sum = 0000000000000011
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000011
+Rdata = 0000000000000011
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     3	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000011
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0001001010000000
+Rs1 = 001
+Rs2 = 010
+Opcode = 0001
+Begin always block with opcode : 0001
+Opcode : 0001 - Store 
+Load or Store task inside ALU
+aluMode : 0
+Rd1 = 0000000000000010
+Offset = 000000
+Result = 0000000000000010
+Load or Store task inside Data_Memory
+Time 45000
+Store task inside Data Memory 45000
+Result = 0000000000000010
+Rd2 = 0000000000000011
+Store complete
+No write back required
+pc = 0000000000000100
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0011000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0011
+Begin always block with opcode : 0011
+Opcode : 0003 - ALU Subtract 
+Subtract task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Difference = 1111111111111111
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 1111111111111111
+Rdata = 1111111111111111
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] = 65535	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000101
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0100000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0100
+Begin always block with opcode : 0100
+Opcode : 0004 - ALU Invert 
+Invert task inside ALU
+Rd1 = 0000000000000001
+Invert = 1111111111111110
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 1111111111111110
+Rdata = 1111111111111110
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] = 65534	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000110
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0101000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0101
+Begin always block with opcode : 0101
+Opcode : 0005 - ALU Logical left shift 
+Logical left shift task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Left shift = 0000000000000100
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000100
+Rdata = 0000000000000100
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     4	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000000111
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0110000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0110
+Begin always block with opcode : 0110
+Opcode : 0006 - ALU Logical right shift 
+Logical right shift task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Right shift = 0000000000000000
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000000
+Rdata = 0000000000000000
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     0	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000001000
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0111000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 0111
+Begin always block with opcode : 0111
+Opcode : 0007 - ALU Bitwise AND 
+Bitwise AND task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Bitwise AND = 0000000000000000
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000000
+Rdata = 0000000000000000
+Write back to R2.
+Write back done.
+pc = 0000000000001001
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 1000000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 1000
+Begin always block with opcode : 1000
+Opcode : 0008 - ALU Bitwise OR 
+Bitwise OR task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Bitwise OR = 0000000000000011
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000011
+Rdata = 0000000000000011
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     3	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000001010
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 1001000001010000
+Rs1 = 000
+Rs2 = 001
+Opcode = 1001
+Begin always block with opcode : 1001
+Opcode : 0009 - ALU Set on less than 
+Set on less than task inside ALU
+Rd1 = 0000000000000001
+Rd2 = 0000000000000010
+Set on less than = 0000000000000001
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000001
+Rdata = 0000000000000001
+Write back to R2.
+Write back done.
+	R[0] =     1	R[1] =     2	R[2] =     1	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000001011
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 0010000000000000
+Rs1 = 000
+Rs2 = 000
+Opcode = 0010
+Begin always block with opcode : 0010
+Opcode : 0002 - ALU Add 
+Add task inside ALU
+aluMode : 1
+Rd1 = 0000000000000001
+Rd2 = 0000000000000001
+Sum = 0000000000000010
+Load or Store task inside Data_Memory
+Inside Data Memory - No memory operation required
+Result = 0000000000000010
+Rdata = 0000000000000010
+Write back to R0.
+Write back done.
+	R[0] =     2	R[1] =     2	R[2] =     1	R[3] =     0	R[4] =     0	R[5] =     0	R[6] =     0	R[7] =     0
+
+pc = 0000000000001100
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 1010000001000001
+Rs1 = 000
+Rs2 = 001
+Opcode = 1010
+Begin always block with opcode : 1010
+Opcode : 00010 - Branch On Equal 
+Branch on Equal in ALU
+aluMode : 0
+Rd1 = 0000000000000010
+Rd2 = 0000000000000010
+Branch taken
+PC updated to = 0000000000001110
+No write back required
+Branch/Jump execution complete
+pc = 0000000000001110
+-------------------------------------------------------------------------------------------------------------
+Instruction read from Instruction_memory is = 1101000000000000
+Rs1 = 000
+Rs2 = 000
+Opcode = 1101
+Begin always block with opcode : 1101
+Opcode : 00013 - aes operation 
+$finish called at time : 200 ns : File "/home/adarsh/dev/verilog/processor_2/processor_2.srcs/sim_1/new/test_Risc_16_bit.v" Line 18
