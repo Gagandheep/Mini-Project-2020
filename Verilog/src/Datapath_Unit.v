@@ -39,24 +39,25 @@ module Datapath_Unit(
     /////////////
     wire aes_done;
     wire [127:0] aes_out;
+    wire aes_write_complete;
     //wire [127:0] aes_in;// = 128'h29C3505F571420F6402299B31A02D73A;
     //wire [127:0] aes_key;// = 128'h5468617473206D79204B756E67204675;
     /////////////
     	
 	Instruction_Memory im(clk, readInstruction, resetInstructionMemory, branchExecute, offset, offsetJump, jumpExecute, pc_instr,readInstructionComplete,pcSetForBranch);
-	Data_Memory dm(clk, memRead, memWrite, result, rd2, executeComplete, resetDataMemory, rdata, memoryOperationComplete, aes_key, aes_in);
-	ALU alu(clk, aluMode, rd1, rd2, offset, execute, op, resetALU, result, executeComplete, branchExecute);
+	Data_Memory dm(clk, memRead, memWrite, result, rd2, executeComplete, resetDataMemory, rdata, memoryOperationComplete, aes_key, aes_in);//, aes_done, aes_write_complete, aes_out);
+	ALU alu(clk, aluMode, rd1, rd2, offset, execute, op, resetALU, result, executeComplete, branchExecute);//, aes_done);
 	// other modules;
 	
 	/////////////
 	wire aes_ed = pc_instr[0];
 	aes_control ac(.out(aes_out), .done(aes_done), .in(aes_in), .key(aes_key), .encr_decr(aes_ed), .start(aes_start), .clk(clk));
-	
+	/////////////
 	wire i2c_RW = pc_instr[0];
-	wire [6:0] i2c_Addr = pc_instr[7:1];
+	wire [6:0]i2c_Addr = pc_instr[7:1];
 	wire SDA;
 	wire SCL;
-	i2c ins(.clk(clk), .reset(i2c_reset), .SDA(SDA), .SCL(SCL), .Data(rd2), .RW(i2c_RW), .Addr(i2c_Addr));
+	i2c ins(.clk(clk), .reset(i2c_reset), .SDA(SDA), .SCL(SCL), .Data(rd1), .RW(i2c_RW), .Addr(i2c_Addr));
 	/////////////
 	
 	//Program counter
@@ -144,7 +145,10 @@ module Datapath_Unit(
 	begin
 	   decodeComplete=0;
 	   $display("aes operation done");
+//	   if (aes_write_complete == 1)
+//	       begin
 	   writeBackComplete=1;
+//	       end
 	end
 	/////////////////////////////////////////////////////////////
 	

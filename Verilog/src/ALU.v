@@ -12,6 +12,7 @@ module ALU(
 	output reg [15:0] result,
 	output reg executeComplete,
 	output reg branchExecute
+//	input aes_done 
 );
 
 	initial begin
@@ -141,6 +142,12 @@ module ALU(
 		executeComplete=0;
 		branchExecute=0;
 	end
+	
+//	always @(posedge aes_done)
+//	begin
+//		executeComplete=1;
+//	end
+
 // your logic
 
 endmodule

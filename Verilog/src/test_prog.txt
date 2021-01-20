@@ -15,4 +15,5 @@
 1101_0000_0000_0000 // aes encryption
 1101_0000_0000_0001 // aes decryption
 1111_0000_0101_0001 // mul R2 <- R0 - R1
+1110_0000_1100_0010 // i2c operation
 1100_0000_0000_0000 // J jump to the beginning address

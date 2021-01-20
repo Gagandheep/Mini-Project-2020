@@ -14,6 +14,9 @@ module Data_Memory(
 	//////////////////
 	output reg [127:0] aes_key,
 	output reg [127:0] aes_in
+//	input aes_done,
+//	output reg aes_write_complete,
+//	input aes_out
 );
 
 reg [`col - 1:0] memory [`row_d - 1:0];
@@ -63,14 +66,14 @@ initial
 			 end
 			else if(memRead == 0 && memWrite ==1) 
 				begin
-					@(posedge clk) begin
+//					always @(posedge clk) begin
 					$display("Time %0t",$time);
 					$display("Store task inside Data Memory %0t",$time);
 					$display("Result = %b",result);
 					$display("Rd2 = %b",rd2);
 					memory[result] = rd2;
 					$display("Store complete");
-					end
+//					end
 				end
 			else if (memRead == 0 && memWrite ==0)
 			 begin
@@ -79,6 +82,13 @@ initial
 				rdata=result;
 				$display("Rdata = %b",rdata);
 			 end
+//			else if (aes_done == 1)
+//             begin
+//                $display("Inside Data Memory - aes memory write operation");
+//                rdata=memory[result];
+//                memory_aes[2] = aes_out;
+//                aes_write_complete = 1;
+//             end
 			memoryOperationComplete=1;
 	end
 	
@@ -86,6 +96,7 @@ initial
 	begin
 		memoryOperationComplete=0;
 	end
-
+	
+	
 
 endmodule

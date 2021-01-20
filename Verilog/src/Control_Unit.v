@@ -190,6 +190,7 @@ module Control_Unit(
 				end
 				15: begin
 						$display("Opcode : 00015 - mul operation ");
+						$display("Opcode : 00015 - mul operation ");
 						memRead=0;
 						memWrite=0;
 						writeBack=1;
